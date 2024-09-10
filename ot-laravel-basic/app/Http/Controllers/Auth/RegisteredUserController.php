@@ -45,6 +45,9 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect(route('dashboard', absolute: false));
+        //10과의 차이점
+        //return redirect(RouteServiceProvider::HOME);
+        //의 형태였으나 밑과 같은 코드로 바뀜
+        return redirect(route('root', absolute: false));
     }
 }
