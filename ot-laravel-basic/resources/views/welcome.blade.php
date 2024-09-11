@@ -47,6 +47,9 @@
 
                     <main class="mt-6">
                         test
+                        <div>
+                            <a href='/articles/create'>write</a>
+                        </div>
                     </main>
                 </div>
             </div>
