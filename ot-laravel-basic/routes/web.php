@@ -23,3 +23,8 @@ require __DIR__.'/auth.php';
 Route::get('/articles/create/', function () {
     return view('articles/create');
 });
+
+Route::post('/articles', function() {
+    // 空いていないし、文字列だし、255字を超えたらダメだ。
+    return 'hello';
+});
