@@ -12,7 +12,8 @@
                 csfr token生成input 
                 <input type="hidden" name="_token" value="<?php echo csrf_token();?>">-->
             @csrf
-            <input type="text" class="block w-full mb-2 rounded">
+            <input type="text" class="block w-full mb-3 rounded">
+            <input type="text" class="block w-full mb-3 rounded" value="{{ old('body') }}">
             
             <!--바디에 에러가 있으면 여기를 표시-->
             @error('body')
@@ -20,7 +21,7 @@
             @enderror
             <button class="py-1 px-3 bg-black text-white rounded text-xs">Save</button>
         </form>
-        <!--배열 형태로 반환-->
+        {{-- <!--배열 형태로 반환-->
         {{ dd($errors->all()) }}
         <!--불값을 반환-->
         {{ dd($errors->any()) }}
@@ -33,7 +34,13 @@
         
         <!--올은 다 가져오지만 겟은 특정 필드지정한것만 가져옴-->
         {{ dd($errors->get('body')) }}
-        {{-- <?php echo dd($error); ?> --}}
+        <?php echo dd($error); ?> --}}
+
+
+        <!-- old메소드가 바디가 갖고있던 값을 갖고있다-->
+        {{-- {{dd(request()->session())}}
+        {{dd(request()->old())}}
+        {{old()}} --}}
 
     </body>
 </html>
