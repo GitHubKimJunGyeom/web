@@ -78,8 +78,10 @@ return [
     |
     */
 
+    //여기서 수정해봐야 의미없고 엔브파일에서 직접 수정해야한다
     'locale' => env('APP_LOCALE', 'en'),
 
+    // 대응할언어가없으면 이거로 대체하겠다는 뜻
     'fallback_locale' => env('APP_FALLBACK_LOCALE', 'en'),
 
     'faker_locale' => env('APP_FAKER_LOCALE', 'en_US'),
