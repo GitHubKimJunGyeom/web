@@ -4,6 +4,14 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Laravel\WorkOS\Http\Middleware\ValidateSessionWithWorkOS;
 
+Route::get('/lang/{locale}', function ($locale) {
+    if (in_array($locale, ['en', 'ko'])) {
+        Session::put('locale', $locale);
+        App::setLocale($locale);
+    }
+    return redirect()->back();
+})->name('change.language');
+
 Route::get('/', fn () => Inertia::render('Welcome'));
 
 Route::middleware([
